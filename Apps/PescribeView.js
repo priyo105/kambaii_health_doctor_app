@@ -49,13 +49,13 @@ return (
                   <Image style={{height:70,width:70,resizeMode:"contain",marginLeft:200}} source={require("../assets/logo.png")} />
             </View>
              
-             <Text style={{margin:10}}>Pescription</Text>
+             <Text style={{margin:10}}>Add Medicine</Text>
              <TextInput style={{width:"100%",height:400,borderColor:"black",borderWidth:1}}></TextInput>
          
-            <View style={{flexDirection:"row"}}>          
+            <View style={{flexDirection:"row",justifyContent:"center"}}>          
                    <NormalButton onPress={()=>{setModalVisible(true)}} text="Add Medicine" color="red"></NormalButton>
                    <View style={{width:100}}></View>
-                   <NormalButton text="Add Lab Test" color="black"></NormalButton>
+                   {/* <NormalButton text="Add Lab Test" color="black"></NormalButton> */}
             </View>
 
 
@@ -124,12 +124,12 @@ return (
          
                     
                     
-                     <Text style={{color:"black", fontWeight:"bold",marginTop:10}}>Added Medicines :</Text>
+                     <Text style={{color:"black",marginLeft:70, fontWeight:"bold",marginTop:10}}>Added Medicines :</Text>
                             
                         
                         <FlatList
                             data={addedMedicines}
-                            style={{marginVertical:10,height:'100%'}}
+                            style={{marginVertical:10,height:'100%',marginLeft:100}}
                             onViewableItemsChanged={console.warn("changed") }
                             renderItem={({item}) => 
 
@@ -146,12 +146,12 @@ return (
 
 
                       <RoundedButton text="Save" color="black"></RoundedButton>
-
+{/* 
                       <View style={{flexDirection:"row",marginLeft:20,marginTop:20,marginBottom:40}}>
                     <RoundedButton text="Back" color="blue"></RoundedButton>
                     <RoundedButton text="Next" color="green" onPress={()=>{navigation.navigate("PescribeView",{id:id})}}></RoundedButton>
 
-            </View>
+            </View> */}
 
     </ScrollView>
 

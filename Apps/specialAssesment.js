@@ -9,6 +9,7 @@ import RoundedButton from "./components/RoundedButton";
 
 
 export default function specialAssesment({route,navigation}){
+  const { id } = route.params;
 
     function handleBackButtonClick() {
         navigation.goBack();
@@ -41,7 +42,7 @@ export default function specialAssesment({route,navigation}){
 
             <View style={{flexDirection:"row",marginLeft:20,marginTop:20}}>
                     <RoundedButton text="Back" color="blue" onPress={()=>{handleBackButtonClick()}}></RoundedButton>
-                    <RoundedButton text="Next" color="green" onPress={()=>{navigation.navigate("OrderLab")}}></RoundedButton>
+                    <RoundedButton text="Next" color="green" onPress={()=>{navigation.navigate("OrderLab",{id:id})}}></RoundedButton>
 
             </View>
 

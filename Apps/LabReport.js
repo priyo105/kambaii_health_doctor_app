@@ -39,15 +39,6 @@ export default function LabReport({route,navigation}){
     
             <View style={{flexDirection:"row"}} >
 
-                     {/* <Text style={{fontSize:20,marginTop:20,marginBottom:20,color:"blue"}}>   Paitent Name : {name} </Text> */}
-                     <TouchableOpacity style={{width:80,height:40,backgroundColor:"black",marginTop:20,marginLeft:30}} onPress={()=>{
-                         navigation.navigate("PescribeView")
-                     }}
-                     >
-
-                         <Text style={{color:"white",padding:10}}>Pescribe</Text>
-                     </TouchableOpacity>
-
             </View>
 
                {progressVisible ? (<ActivityIndicator style={{marginVertical:10}} size="large" color="red" /> ): null }

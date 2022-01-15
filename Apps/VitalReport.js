@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import {View,Text,FlatList,Image,ActivityIndicator, TextInput,BackHandler} from "react-native";
+import {View,Text,FlatList,Image,ActivityIndicator, TextInput,BackHandler,CheckBox} from "react-native";
 import { useState } from "react/cjs/react.development";
 import PcpVisitApi from "../Apps/apis/PcpVisitApi"
 import ApiUrl from "../Apps/apis/ApiUrls";
@@ -53,8 +53,6 @@ export default function VitalReport({route,navigation}){
                   
                     <View style={{marginLeft:20,marginTop:20}}>
                             <Text style={{fontWeight:"bold",fontSize:16}}> Patient Name      :      {name}</Text>
-                            <Text style={{fontWeight:"bold",fontSize:16}}> Mobile                   :    {mobile}</Text>
-                            <Text style={{fontWeight:"bold",fontSize:16}}> Email                     :    {email}</Text>
                             <Text style={{fontWeight:"bold",fontSize:16}}> Height                   :    {height_ft} ft {height_inch} inch</Text>
                             <Text style={{fontWeight:"bold",fontSize:16}}> Weight                   :    {weight} kg</Text>
                             <Text style={{fontWeight:"bold",fontSize:16}}> Bmi                        :     {bmi}    </Text>

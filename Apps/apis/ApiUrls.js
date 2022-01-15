@@ -15,6 +15,7 @@ class ApiUrls extends Component {
   sendOtp=baseUrl+"match_mobile_number";
   prescription_view_for_app=baseUrl+"prescription_view_for_app";
   all_labTest=baseUrl+"all_lab_test_list";
+  getGenericName=baseUrl+"getGenericName";
 }
 
 const b = new ApiUrls();
