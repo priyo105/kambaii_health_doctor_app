@@ -19,7 +19,7 @@ export default function DoctorHome({navigation}){
           <View style={{marginLeft:20}}>
             <Text style={{fontWeight:"bold"}}>Welcome</Text>
             <Text style={{fontWeight:"bold",fontSize:20,color:"#000"}}>Hello {name}</Text>
-            <Text style={{fontWeight:"bold",fontSize:14,color:'black'}}>from Ahsania Mission cancer hospital !</Text>
+            {/* <Text style={{fontWeight:"bold",fontSize:14,color:'black'}}>from Ahsania Mission cancer hospital !</Text> */}
 
          </View>
 

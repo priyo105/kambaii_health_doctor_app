@@ -3,6 +3,7 @@ import {View,Text,FlatList,ActivityIndicator,Image, TouchableOpacity,ScrollView,
 import LabReportApi from '../Apps/apis/LabReportsApi';
 import RoundedButton from "./components/RoundedButton";
 import CallSelectView from "./components/CallSelectView";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function LabReport({route,navigation}){
    const { id } = route.params;
@@ -34,7 +35,7 @@ export default function LabReport({route,navigation}){
       }, []);
    return(
 
-       <ScrollView>
+       <SafeAreaView>
            <Text style={{fontSize:20,marginTop:20,marginBottom:20}}>   Lab Reports </Text>
     
             <View style={{flexDirection:"row"}} >
@@ -46,7 +47,7 @@ export default function LabReport({route,navigation}){
 
                      <FlatList
                             data={data}
-                            style={{marginVertical:20,height:'100%'}}
+                            style={{marginVertical:20,height:'40%'}}
                             onViewableItemsChanged={console.warn("changed") }
                             renderItem={({item}) => 
 
@@ -83,7 +84,7 @@ export default function LabReport({route,navigation}){
 
             </View>
                             
-        </ScrollView>
+        </SafeAreaView>
    )
 
 
@@ -91,6 +92,7 @@ export default function LabReport({route,navigation}){
    function getLabReport(id){
        setProgressVisible(true)
        LabReportApi.getLabReport(id).then((response)=>{
+             console.warn(response)
              setProgressVisible(false)
              setData(response.data.data)
              let images=[];

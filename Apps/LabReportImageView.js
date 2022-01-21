@@ -6,8 +6,10 @@ import Gallery from 'react-native-image-gallery';
 export default function LabReportImageView ({route}) {
   
     const { images } = route.params;
-     let  imageArray=[];
+    
+    let  imageArray=[];
      imageArray= JSON.parse(images);
+     console.warn(imageArray)
      
      const imagesForViewer=[];
      for(let i=0;i<imageArray.length;i++){

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import MedicineListApi from '../Apps/apis/MedicineListApi';
-import {View,FlatList,TouchableOpacity,Text,ActivityIndicator,Image,Linking,ScrollView,StyleSheet,BackHandler} from 'react-native';
+import {View,FlatList,TouchableOpacity,Text,ActivityIndicator,Image,Linking,ScrollView,StyleSheet,BackHandler, SafeAreaView} from 'react-native';
 import { useState } from "react/cjs/react.development";
 import CallSelectView from "./components/CallSelectView";
 import RoundedButton from "./components/RoundedButton";
@@ -75,7 +75,7 @@ export default function MedicineView({route,navigation}){
            console.log(medicnines[0])
        MedicineListApi.getDrugInteractions(medicnines[0],medicnines[1]).then((response)=>{
         console.log(response)
-        setDrugint(response.data.data.nlmDisclaimer);
+        setDrugint(response.data.data.fullInteractionTypeGroup[0].fullInteractionType[0].comment);
     })
 
     }else{
@@ -88,7 +88,7 @@ export default function MedicineView({route,navigation}){
 
         
 
-        <ScrollView style={{marginLeft:20}}>
+        <SafeAreaView style={{marginLeft:20}}>
 
                         <Text style={{marginTop:20,fontSize:20,fontWeight:"bold",color:"black"}}>  Patient Medications</Text>                    
 
@@ -102,6 +102,7 @@ export default function MedicineView({route,navigation}){
 
                         <FlatList
                             data={data}
+                            style={{height:'40%'}}
                             onViewableItemsChanged={console.warn("changed") }
                             
                             renderItem={({item,index}) => 
@@ -167,7 +168,7 @@ export default function MedicineView({route,navigation}){
 
                 
 
-        </ScrollView>
+        </SafeAreaView>
 
 
         );

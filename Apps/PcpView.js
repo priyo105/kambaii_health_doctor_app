@@ -7,6 +7,7 @@ import RoundedEditTextWithLabel from "./components/RoundedEditTextWithLabel";
 import RoundedButton from "./components/RoundedButton";
 
 import { BackHandler } from 'react-native';
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function PcpView({route,navigation}){
     const { id } = route.params;
@@ -45,7 +46,7 @@ export default function PcpView({route,navigation}){
 
        return(
 
-           <ScrollView>
+           <View>
             <View style={{flexDirection:"row"}}>
                  <Image style={{height:50,width:50,resizeMode:"contain"}} source={require("../assets/doctor.png")} />
                   <Text style={{marginTop:20,marginLeft:20,fontSize:20,fontWeight:"bold",color:"black"}}>{global.name}</Text>                     
@@ -99,7 +100,7 @@ export default function PcpView({route,navigation}){
 
                </View>
 
-           </ScrollView>
+           </View>
 
   );
 

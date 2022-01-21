@@ -41,7 +41,7 @@ export default function PescribeView(){
 
 return (
  
-    <ScrollView style={{margin:20}}>
+    <View style={{margin:20}}>
 
             <View style={{flexDirection:"row"}}>
                  <Image style={{height:50,width:50,resizeMode:"contain"}} source={require("../assets/doctor.png")} />
@@ -50,7 +50,7 @@ return (
             </View>
              
              <Text style={{margin:10}}>Add Medicine</Text>
-             <TextInput style={{width:"100%",height:400,borderColor:"black",borderWidth:1}}></TextInput>
+             <TextInput style={{width:"100%",height:200,borderColor:"black",borderWidth:1}}></TextInput>
          
             <View style={{flexDirection:"row",justifyContent:"center"}}>          
                    <NormalButton onPress={()=>{setModalVisible(true)}} text="Add Medicine" color="red"></NormalButton>
@@ -129,7 +129,7 @@ return (
                         
                         <FlatList
                             data={addedMedicines}
-                            style={{marginVertical:10,height:'100%',marginLeft:100}}
+                            style={{marginVertical:10,height:'10%',marginLeft:100}}
                             onViewableItemsChanged={console.warn("changed") }
                             renderItem={({item}) => 
 
@@ -145,7 +145,7 @@ return (
                             keyExtractor={(item, index) => index.toString()} /> 
 
 
-                      <RoundedButton text="Save" color="black"></RoundedButton>
+                      <RoundedButton text="Save" color="black" onPress={()=>{Message.notifyMessage("data saved")}}></RoundedButton>
 {/* 
                       <View style={{flexDirection:"row",marginLeft:20,marginTop:20,marginBottom:40}}>
                     <RoundedButton text="Back" color="blue"></RoundedButton>
@@ -153,7 +153,7 @@ return (
 
             </View> */}
 
-    </ScrollView>
+    </View>
 
 );
 

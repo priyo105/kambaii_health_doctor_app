@@ -21,8 +21,7 @@ export default function PatientList()
         <Text style={{textAlign:"center",marginVertical:40,fontSize:20,color:"black",fontFamily:"monospace",fontWeight:"bold"}}>Patient List</Text>
         <FlatList
                             data={data}
-                            onViewableItemsChanged={console.warn("changed") }
-                            renderItem={({item}) => 
+                            renderItem={(item) => {
                             <View style={{borderWidth:1,borderRadius:10,borderColor:"#555624", padding:10,marginRight:20,flexDirection:"row",marginHorizontal:20}}>
                              <Image style={{height:32,width:32,resizeMode:"contain",marginRight:10,marginLeft:10,marginTop:20}} source={require("../assets/patient_new.png")} />
 
@@ -38,7 +37,7 @@ export default function PatientList()
                                 <Text style={{fontWeight:"bold",fontSize:13,color:"black"}}> Gender : {item.gender} </Text>
                
                             </View> 
-                            </View>
+                            </View>}
                         
                         }
                             ItemSeparatorComponent={() => {
